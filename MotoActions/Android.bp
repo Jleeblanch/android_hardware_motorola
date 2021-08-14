@@ -1,0 +1,28 @@
+//
+// Copyright (C) 2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+android_app {
+    name: "MotoActions",
+    certificate: "platform",
+    platform_apis: true,
+    resource_dirs: ["res"],
+    srcs: ["src/**/*.java"],
+    system_ext_specific: true,
+
+    defaults: [
+        "SettingsLibDefaults",
+    ],
+
+    static_libs: [
+        "androidx.core_core",
+        "androidx.preference_preference",
+        "org.lineageos.settings.resources",
+    ],
+
+    optimize: {
+        proguard_flags_files: ["proguard.flags"],
+    },
+}
